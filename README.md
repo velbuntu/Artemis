@@ -1,6 +1,6 @@
 # V_Artemis.py - Diffusion Model Script
 
-`V_Artemis.py` is a core component of a diffusion model, likely designed for image generation. It implements the U-Net architecture, provides utilities for diffusion processes, and supports both Denoising Diffusion Probabilistic Models (DDPM) and Denoising Diffusion Implicit Models (DDIM) for sampling.
+`V_Artemis.py` is a core component of a diffusion model, designed for image generation. It implements the U-Net architecture, provides utilities for diffusion processes, and supports both Denoising Diffusion Probabilistic Models (DDPM) and Denoising Diffusion Implicit Models (DDIM) for sampling.
 
 ## Features
 
@@ -48,41 +48,3 @@ pip install -r requirements.txt
 ### Model Storage
 
 Models are saved and loaded from the `models/` directory. The default model name is `default_model`.
-
-### Example Usage (Conceptual)
-
-While this file primarily contains the model logic, it's designed to be integrated into a larger application (e.g., `app.py`). Here's a conceptual overview of how it might be used:
-
-1.  **Load a Model:**
-
-    ```python
-    from V_Artemis import Unet, get_model_paths
-    
-    model_name = "my_trained_model"
-    model_path, metadata_path = get_model_paths(model_name)
-    
-    # Load model and metadata
-    # ... (code to load state_dict and parse metadata)
-    ```
-
-2.  **Generate Images:**
-
-    ```python
-    from V_Artemis import generate_images, precompute_diffusion_terms, linear_beta_schedule
-    
-    # Assuming model and metadata are loaded
-    # ...
-    
-    # Setup diffusion terms and time schedule
-    timesteps = 1000
-    betas = linear_beta_schedule(timesteps)
-    diffusion_terms = precompute_diffusion_terms(betas)
-    time_schedule = list(range(timesteps - 1, -1, -1)) # For reverse sampling
-    
-    # Generate images
-    # This part would typically be called from an application that handles user prompts and parameters
-    # For example, a web endpoint might call generate_for_web
-    # generate_images(model, metadata, "a dog", 1, time_schedule, diffusion_terms, ddim_sample)
-    ```
-
-This `V_Artemis.py` script provides the foundational diffusion model capabilities that can be integrated into various applications, especially those requiring image generation with progress feedback.
