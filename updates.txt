@@ -1,0 +1,6 @@
+-- 26.06.2025 --
+1. It's my birthday!
+2. Made updates.txt
+3. Added effects to images
+4. Fixed image sharing bug
+5. Made image viewer better by adding a download button, a info button and "Created with V.Artemis"
