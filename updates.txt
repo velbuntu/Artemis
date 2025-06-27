@@ -4,3 +4,6 @@
 3. Added effects to images
 4. Fixed image sharing bug
 5. Made image viewer better by adding a download button, a info button and "Created with V.Artemis"
+
+-- 27.06.2025 --
+1. Made train.py look better
